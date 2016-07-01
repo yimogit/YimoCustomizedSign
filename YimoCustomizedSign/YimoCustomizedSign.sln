@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "素材网请求测试", "素材网请求测试\素材网请求测试.csproj", "{D2FF2182-82BA-4A04-A09C-645188989916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YimoCore", "YimoCore\YimoCore.csproj", "{739F3C2D-EA72-491F-95CB-6B0695226DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yimo.Sign.17Sucai", "Yimo.Sign.17Sucai\Yimo.Sign.17Sucai.csproj", "{714B90F1-B119-4187-824A-21A56AAFAFF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YimoSignMain", "YimoSignMain\YimoSignMain.csproj", "{B8BAEF62-14E6-40EC-991A-67E2D240975A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12862EEF-CA90-4EF7-9384-9C4D3BB27191}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{C369FE8C-B8BA-4E0A-AF8B-C87045B23B83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{796C4512-92B4-4B28-A021-60231B69F914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yimo.Sign.BaiDuTieBa", "Yimo.Sign.BaiDuTieBa\Yimo.Sign.BaiDuTieBa.csproj", "{9ACAB77E-A780-46E2-B724-EC9140DEAD96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2FF2182-82BA-4A04-A09C-645188989916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FF2182-82BA-4A04-A09C-645188989916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FF2182-82BA-4A04-A09C-645188989916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FF2182-82BA-4A04-A09C-645188989916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739F3C2D-EA72-491F-95CB-6B0695226DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739F3C2D-EA72-491F-95CB-6B0695226DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739F3C2D-EA72-491F-95CB-6B0695226DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739F3C2D-EA72-491F-95CB-6B0695226DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714B90F1-B119-4187-824A-21A56AAFAFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714B90F1-B119-4187-824A-21A56AAFAFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714B90F1-B119-4187-824A-21A56AAFAFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714B90F1-B119-4187-824A-21A56AAFAFF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BAEF62-14E6-40EC-991A-67E2D240975A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BAEF62-14E6-40EC-991A-67E2D240975A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BAEF62-14E6-40EC-991A-67E2D240975A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BAEF62-14E6-40EC-991A-67E2D240975A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACAB77E-A780-46E2-B724-EC9140DEAD96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACAB77E-A780-46E2-B724-EC9140DEAD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACAB77E-A780-46E2-B724-EC9140DEAD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACAB77E-A780-46E2-B724-EC9140DEAD96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2FF2182-82BA-4A04-A09C-645188989916} = {12862EEF-CA90-4EF7-9384-9C4D3BB27191}
+		{739F3C2D-EA72-491F-95CB-6B0695226DCF} = {C369FE8C-B8BA-4E0A-AF8B-C87045B23B83}
+		{714B90F1-B119-4187-824A-21A56AAFAFF7} = {796C4512-92B4-4B28-A021-60231B69F914}
+		{B8BAEF62-14E6-40EC-991A-67E2D240975A} = {C369FE8C-B8BA-4E0A-AF8B-C87045B23B83}
+		{9ACAB77E-A780-46E2-B724-EC9140DEAD96} = {796C4512-92B4-4B28-A021-60231B69F914}
+	EndGlobalSection
+EndGlobal

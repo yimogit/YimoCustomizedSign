@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugin>
+  <Group>Sign</Group>
+  <FriendlyName>百度贴吧</FriendlyName>
+  <SystemName>Yimo.Sign.BaiDuTieBa</SystemName>
+  <Description>百度贴吧签到</Description>
+  <Version>1.0</Version>
+  <SupportedVersions>1.0</SupportedVersions>
+  <Author>YiMo</Author>
+  <DisplayOrder>1</DisplayOrder>
+  <FileName>Yimo.Sign.BaiDuTieBa.dll</FileName>
+</plugin>
