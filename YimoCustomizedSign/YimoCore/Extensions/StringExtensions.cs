@@ -394,6 +394,10 @@ namespace YimoCore
             // return AntiXss.UrlEncode(value);
             return HttpUtility.UrlEncode(value);
         }
+        public static string UrlDecode(this string value)
+        {
+            return HttpUtility.UrlDecode(value);
+        }
 
         public static string HtmlAttrEncode(this string value)
         {
@@ -504,6 +508,36 @@ namespace YimoCore
             {
                 return false;
             }
+        }
+        /// <summary>
+        /// 汉字转换为Unicode编码
+        /// </summary>
+        /// <param name="str">要编码的汉字字符串</param>
+        /// <returns>Unicode编码的的字符串</returns>
+        public static string ToUnicode(this string str)
+        {
+            byte[] bts = Encoding.Unicode.GetBytes(str);
+            string r = "";
+            for (int i = 0; i < bts.Length; i += 2) r += "\\u" + bts[i + 1].ToString("x").PadLeft(2, '0') + bts[i].ToString("x").PadLeft(2, '0');
+            return r;
+        }
+        /// <summary>
+        /// 将Unicode编码转换为汉字字符串
+        /// </summary>
+        /// <param name="str">Unicode编码字符串</param>
+        /// <returns>汉字字符串</returns>
+        public static string ToGB2312(this string str)
+        {
+            string r = "";
+            MatchCollection mc = Regex.Matches(str, @"\\u([\w]{2})([\w]{2})", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            byte[] bts = new byte[2];
+            foreach (Match m in mc)
+            {
+                bts[0] = (byte)int.Parse(m.Groups[2].Value, NumberStyles.HexNumber);
+                bts[1] = (byte)int.Parse(m.Groups[1].Value, NumberStyles.HexNumber);
+                r += Encoding.Unicode.GetString(bts);
+            }
+            return r;
         }
 
     }

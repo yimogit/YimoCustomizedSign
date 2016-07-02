@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugin>
+  <Group>Sign</Group>
+  <FriendlyName>伯乐在线</FriendlyName>
+  <SystemName>Yimo.Sign.JobBole</SystemName>
+  <Description>17素材网签到</Description>
+  <Version>1.0</Version>
+  <SupportedVersions>1.0</SupportedVersions>
+  <Author>YiMo</Author>
+  <DisplayOrder>1</DisplayOrder>
+  <FileName>Yimo.Sign.JobBole.dll</FileName>
+  <Data>[{"UserName":"用户名","UserPwd":"密码"}]</Data>
+</plugin>
