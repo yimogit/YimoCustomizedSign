@@ -27,7 +27,7 @@ namespace YimoSignMain
             this.chkSellectAll.CheckedChanged += chkSellectAll_CheckedChanged;
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = ScrollBars.Vertical;
-
+            this.chkSellectAll.BringToFront();
             List<PluginDescriptor> plugins = PluginManager.ReferencedPlugins.ToList();
             this.lvMemberList.Items.Clear();
             foreach (var plugin in plugins)
