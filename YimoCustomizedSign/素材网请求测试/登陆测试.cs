@@ -9,6 +9,7 @@ namespace 素材网请求测试
     public class 登陆测试
     {
         static HttpHelper http = new HttpHelper();
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -23,8 +24,6 @@ namespace 素材网请求测试
             };
             model.LoginPwd = Encrypt.SHA1Encrypt(model.LoginPwd).ToLower();
             GetToken(model);
-
-
             //登陆
             PostLogin(model);
             if (model.Result.Html.Contains("ret\":1"))//登陆成功

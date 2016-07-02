@@ -24,11 +24,6 @@ namespace Yimo.Sign._17Sucai
             }
             return model;
         }
-        #region 签到
-
-        #endregion
-
-
         public PluginDescriptor PluginDescriptor { get; set; }
 
 

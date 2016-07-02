@@ -51,16 +51,17 @@ namespace YimoSignMain
                 item.Checked = (sender as CheckBox).Checked;
             }
         }
-        private TaskScheduler mpr_ts_UIContext;
         private void btnSign_Click(object sender, EventArgs e)
         {
-            mpr_ts_UIContext = TaskScheduler.FromCurrentSynchronizationContext();
             List<string> selectMember = new List<string>();
+            //获取选择项
             foreach (var item in this.lvMemberList.CheckedItems)
             {
                 selectMember.Add((item as ListViewItem).Name);
             }
+            //将要调用的插件列表
             var plist = PluginManager.ReferencedPlugins.Where(e1 => selectMember.Any(e2 => e2 == e1.SystemName)).ToList();
+
             Task.Run(() =>
             {
                 List<Task> task = new List<Task>();
@@ -70,50 +71,57 @@ namespace YimoSignMain
                     {
                         task.Add(Task.Run(() =>
                         {
-
-                            //var ts_Run = Task.Factory.StartNew(async () =>
-                            //{
-                                string log = "";
-                                Stopwatch watch = new Stopwatch();
-                                SignModel sign = new SignModel();
-                                try
-                                {
-                                    watch.Start();
-                                    log = DateTime.Now.ToChineseLongDate() +" "+ item.FriendlyName + " → " + "任务开始" + "\r\n";
-                                    txtLog.AppendText(log);
-                                    sign = item.Instance<IMemberSignin>().ExecSign();
-                                    log = sign.Msg;
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    log = ex.Message;
-                                }
-                                finally
-                                {
-                                    watch.Stop();
-                                    lvMemberList.Items[item.SystemName].SubItems[2].Text = log;
-                                    lvMemberList.Items[item.SystemName].SubItems[3].Text = watch.ElapsedMilliseconds.ToString();
-                                    lvMemberList.Items[item.SystemName].SubItems[4].Text = sign.IsSuccess.ToStatusString();
-                                    lvMemberList.Items[item.SystemName].SubItems[5].Text = sign.Count.ToString();
-                                    log = string.Format("{0} {1} → {2}({3}毫秒) \r\n", DateTime.Now.ToChineseLongDate(), item.FriendlyName, log, watch.ElapsedMilliseconds.ToString());// sign.BeginSignTime.ToString("yyyy-MM-dd HH:mm:ss ") + item.FriendlyName + " →" + sign.Msg + "\r\n";
-
-                                    txtLog.AppendText(log);
-                                }
-                                // 模拟使用await xxxx ;  
-                                //await Task.Delay(100);
-
-                            //}, CancellationToken.None, TaskCreationOptions.None, mpr_ts_UIContext).Unwrap();
-
+                            ExecTask(item);
 
                         }));
                     }
                 });
                 Task.WaitAll(task.ToArray());
             });
+
             GC.Collect();
+        }
+        /// <summary>
+        /// 执行任务
+        /// </summary>
+        /// <param name="item"></param>
+        private void ExecTask(PluginDescriptor item)
+        {
+            string log = "";
+            Stopwatch watch = new Stopwatch();
+            SignModel sign = new SignModel();
+            try
+            {
+                watch.Start();
+                log = DateTime.Now.ToChineseLongDate() + " " + item.FriendlyName + " → " + "任务开始" + "\r\n";
+                this.txtLog.Invoke(new Action(() =>
+                {
+                    txtLog.AppendText(log);
+                }));
+                sign = item.Instance<IMemberSignin>().ExecSign();
+                log = sign.Msg;
 
-
+            }
+            catch (Exception ex)
+            {
+                log = ex.Message;
+            }
+            finally
+            {
+                watch.Stop();
+                this.lvMemberList.Invoke(new Action(() =>
+                {
+                    lvMemberList.Items[item.SystemName].SubItems[2].Text = log;
+                    lvMemberList.Items[item.SystemName].SubItems[3].Text = watch.ElapsedMilliseconds.ToString();
+                    lvMemberList.Items[item.SystemName].SubItems[4].Text = sign.IsSuccess.ToStatusString();
+                    lvMemberList.Items[item.SystemName].SubItems[5].Text = sign.Count.ToString();
+                }));
+                this.txtLog.Invoke(new Action(() =>
+                {
+                    log = string.Format("{0} {1} → {2}({3}毫秒) \r\n", DateTime.Now.ToChineseLongDate(), item.FriendlyName, log, watch.ElapsedMilliseconds.ToString());
+                    txtLog.AppendText(log);
+                }));
+            }
         }
 
     }
