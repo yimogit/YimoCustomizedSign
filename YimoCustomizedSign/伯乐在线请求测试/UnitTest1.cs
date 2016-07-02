@@ -15,7 +15,7 @@ namespace 伯乐在线请求测试
         public void TestMethod1()
         {
             JobBoleService service = new JobBoleService();
-            var sign = service.BeginSign("用户名", "密码");  
+            var sign = service.BeginSign("用户名", "密码");
         }
         [TestMethod]
         public void TestMethod2()
