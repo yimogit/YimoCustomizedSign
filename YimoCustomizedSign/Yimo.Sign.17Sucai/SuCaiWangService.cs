@@ -36,7 +36,7 @@ namespace Yimo.Sign._17Sucai
                     signModel.IsSuccess = true;
                     if (model.Result.Html.Contains("score"))
                     {
-                        signModel.Msg = "签到成功,获得积分:" + RegexHelper.GetMidValue("score", "}", model.Result.Html);
+                        signModel.Msg = "签到成功,获得积分:" + RegexHelper.GeMidStringValue(model.Result.Html, "score", "}");
                     }
                     else
                     {
@@ -52,7 +52,7 @@ namespace Yimo.Sign._17Sucai
             {
                 signModel.Msg = "登陆失败";
             }
-            signModel.Msg = "["+userName+"]" + signModel.Msg;
+            signModel.Msg = "[" + userName + "]" + signModel.Msg;
             return signModel;
         }
         /// <summary>

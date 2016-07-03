@@ -37,7 +37,7 @@ namespace Yimo.Sign.BaiDu
                 }
                 else if (model.Result.Html.Contains("errno\":\"0") && model.Result.Html.Contains("error_no\":\"0"))
                 {
-                    signModel.Msg = "百度文库已签到";
+                    signModel.Msg = "签到失败或已签到";
                 }
                 else
                 {
