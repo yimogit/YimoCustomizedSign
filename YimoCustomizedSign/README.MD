@@ -10,9 +10,11 @@
 
 ## 下面是已经实现的自动签到类库
 
-* 17素材网(http://www.17sucai.com)
+* 17素材网(http://www.17sucai.com/)
 
 * 伯乐在线(http://www.jobbole.com/)
+
+* 百度文库(http://wenku.baidu.com/)
 
 * ...
 

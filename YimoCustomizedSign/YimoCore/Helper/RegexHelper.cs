@@ -55,6 +55,22 @@ namespace YimoCore
             return rg.Match(html).Value;
         }
         #endregion
+
+        /// <summary>
+        /// 获取匹配的第一个字符串
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="pattern"></param>
+        /// <returns></returns>
+        public static string GetString(string input, string pattern)
+        {
+            MatchCollection MC = Regex.Matches(input, pattern);
+            if (MC.Count == 0)
+                return "";
+            else
+                return MC[0].Value;
+        }
+
         #endregion
     }
 }

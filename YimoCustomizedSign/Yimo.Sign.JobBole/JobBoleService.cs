@@ -29,12 +29,12 @@ namespace Yimo.Sign.JobBole
                 model.Cookie = model.Result.Cookie;
                 signModel.Msg = "登陆成功";
                 model.Result = PostSign(model);
-                if (model.Result.Html.Contains("jb_result\"0"))
+                if (model.Result.Html.Contains("jb_result\":0"))
                 {
                     signModel.Msg = "签到成功";
                     signModel.IsSuccess = true;
                 }
-                else if (model.Result.Html.Contains("jb_result\"-1"))
+                else if (model.Result.Html.Contains("jb_result\":-1"))
                 {
                     signModel.Msg = RegexHelper.GeMidStringValue(model.Result.Html, "jb_msg\":\"", "\"}").ToGB2312();
                 }

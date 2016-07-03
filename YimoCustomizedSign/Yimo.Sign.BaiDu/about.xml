@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugin>
+  <Group>Sign</Group>
+  <FriendlyName>百度</FriendlyName>
+  <SystemName>Yimo.Sign.BaiDu</SystemName>
+  <Description>百度文库签到</Description>
+  <Version>1.0</Version>
+  <SupportedVersions>1.0</SupportedVersions>
+  <Author>YiMo</Author>
+  <DisplayOrder>1</DisplayOrder>
+  <FileName>Yimo.Sign.BaiDu.dll</FileName>
+  <Data>[{"UserName":"用户名","UserPwd":"密码"}]</Data>
+</plugin>
